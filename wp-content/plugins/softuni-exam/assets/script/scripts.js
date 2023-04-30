@@ -6,8 +6,8 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         // console.log( 'clicked' ); // just to be sure
 
-        let job_id = jQuery(this).attr('id') // we'll need this later
-        console.log( job_id );
+        let property_id = jQuery(this).attr('id') // we'll need this later
+        // console.log( property_id );
 
         jQuery.ajax({
             type: 'post',
@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
             url: my_ajax_object.ajax_url,
             data: {
                 action:'softuni_like_property', // PHP function
-                job_id: job_id // we need to make this dynamic
+                property_id: property_id // we need to make this dynamic
             },
             success: function(msg){
                 console.log(msg);
