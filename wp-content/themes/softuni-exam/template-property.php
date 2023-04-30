@@ -35,7 +35,7 @@
     <?php while ( $property_query->have_posts() ): ?>
         <?php $property_query->the_post(); ?>
         
-        <?php get_template_part( 'template-parts/post', 'item' ); ?>
+        <?php get_template_part( 'template-parts/property', 'item' ); ?>
 
     <?php endwhile ?>
 
