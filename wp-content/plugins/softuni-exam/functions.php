@@ -74,7 +74,7 @@ function softuni_display_single_term( $jobs_id, $taxonomy ) {
  */
 function change_text_another_callback( $content ) { 
 
-    $filtered_content = str_replace( "Lorem ipsum dolor sit amet", "Dummy text to fill in spaces", $content );
+    $filtered_content = str_replace( "Lorem", "Dummy text to fill in spaces", $content );
 
     return $filtered_content;
 }
