@@ -66,6 +66,21 @@ function softuni_display_single_term( $jobs_id, $taxonomy ) {
 
 }
 
+/**
+ * Filter the content
+ *
+ * @param [string] $content
+ * @return string
+ */
+function change_text_another_callback( $content ) { 
+
+    $filtered_content = str_replace( "Lorem ipsum dolor sit amet", "Dummy text to fill in spaces", $content );
+
+    return $filtered_content;
+}
+
+add_filter( 'the_content', 'change_text_another_callback');
+
 
 
 /**
@@ -88,3 +103,38 @@ function softuni_like_property() {
 
 add_action( 'wp_ajax_nopriv_softuni_like_property', 'softuni_like_property' );
 add_action( 'wp_ajax_softuni_like_property', 'softuni_like_property' );
+
+
+
+/**
+ * Count the words inside the content of post and show estimated reading time
+ *
+ * @return int
+ */
+function softuni_estimated_reading_time( $atts ) {
+
+    $a = shortcode_atts( array(
+        'id' => null
+    ), $atts );
+
+    $post_id = $a['id'];
+    $content_post = get_post( $post_id );
+    if ( empty( $content_post ) ) {
+        return;
+    }
+    $content = $content_post->post_content;
+    $content = str_replace(']]>', ']]&gt;', $content);
+
+    $output = '';
+    $reading_time = ceil( str_word_count( $content )/200 );
+    if ( str_word_count( $content )/200 <= 1 ) {
+        $output = esc_html__( 'Estimated reading time: under ' . $reading_time . ' minute', 'softuni' );
+    }
+    else {
+        $output = esc_html__( 'Estimated reading time: ' . $reading_time . ' minutes', 'softuni' );
+    }
+
+    return '<i style="font-size: 14px;">' . $output . '</i>';
+}
+
+add_shortcode( 'estimated_reading_time', 'softuni_estimated_reading_time' );
