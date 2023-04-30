@@ -6,7 +6,7 @@
             </a>
         </h2>
         <div class="property-meta">
-            <span class="meta-location">Ovcha Kupel, Sofia</span>
+            <span class="meta-location"><?php esc_html_e( softuni_display_single_term( get_the_ID(), 'location' ) ); ?></span>
             <?php 
                 if ( ! empty( get_field( 'property_area' ) ) ) : ?>
 
@@ -22,6 +22,13 @@
                         ?>
                     </span>
             <?php endif ?>
+            <span class="meta-views">
+                <?php
+                    if( ! empty( get_post_meta( get_the_ID(), 'property_views' ) ) ) {
+                        esc_html_e( 'Views: ' . get_post_meta( get_the_ID(), 'property_views', true ) );
+                    }
+                ?>
+            </span>
         </div>
         <div class="property-details">
             <?php 
