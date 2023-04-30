@@ -10,7 +10,7 @@
         'post_status'   => 'publish',
         'post_per_page' => 7,
         'order_by'      => 'date',
-        'order'         => 'ASC',
+        'order'         => 'DESC',
     );
 
     $property_query = new Wp_Query( $property_args );
