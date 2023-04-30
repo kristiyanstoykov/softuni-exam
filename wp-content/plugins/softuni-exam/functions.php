@@ -74,7 +74,7 @@ function softuni_display_single_term( $jobs_id, $taxonomy ) {
  * @return void
  */
 function softuni_like_property() {
-	$job_id = esc_attr( $_POST['job_id'] );
+	$job_id = esc_attr( $_POST['property_id'] );
 	$likes_number = get_post_meta( $job_id, 'property_likes', true );
 
     if ( empty( $likes_number ) ) {
