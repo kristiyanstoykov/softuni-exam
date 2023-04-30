@@ -26,18 +26,22 @@
                             <?php endif ?>
 							<span class="meta-views">
 								<?php
-									if( ! empty( get_post_meta( get_the_ID(), 'property_views' ) ) ) {
+									if ( empty( get_post_meta( get_the_ID(), 'property_views', true ) ) ) {
+										esc_html_e( 'Views: 0' );
+									} else {
 										esc_html_e( 'Views: ' . get_post_meta( get_the_ID(), 'property_views', true ) );
 									}
 								?>
 							</span>
 							<span class="meta-likes">
 								<?php
-									if( ! empty( get_post_meta( get_the_ID(), 'property_likes' ) ) ) {
+									if ( empty( get_post_meta( get_the_ID(), 'property_likes', true ) ) ) {
+										esc_html_e( 'Likes: 0' );
+									} else {
 										esc_html_e( 'Likes: ' . get_post_meta( get_the_ID(), 'property_likes', true ) );
 									}
 								?>
-							</span>
+                        	</span>
                         </div>
 						<div class="property-details">
                             <?php
