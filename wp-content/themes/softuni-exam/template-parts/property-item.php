@@ -66,9 +66,6 @@
                 if ( has_post_thumbnail() ) {
                     the_post_thumbnail();
                 }
-                // else {
-                //     esc_html_e( '<img src="' . get_template_directory() . '/images/bedroom.jpg">' );
-                // }
             ?>
         </div>
     </div>
