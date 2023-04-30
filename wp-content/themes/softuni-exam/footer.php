@@ -1,9 +1,6 @@
 		
 		<footer class="site-footer">
-			<p> <?php esc_html_e( get_bloginfo() ); ?> &copy; Copyright <?php esc_html_e( date( 'Y' ) ); ?> | Developer links: 
-				<a href="#">Edits</a>,
-				<a href="#">Home</a>,
-				<a href="#">Single</a>
+			<p> <?php esc_html_e( get_bloginfo() ); ?> &copy; Copyright <?php esc_html_e( date( 'Y' ) ); ?> |
 			</p>
 
             <div class="footer-menu">
