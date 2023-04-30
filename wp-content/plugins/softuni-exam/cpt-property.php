@@ -1,22 +1,22 @@
 <?php
 
 /**
- * Register a custom post type called "home".
+ * Register a custom post type called "property".
  *
  * @see get_post_type_labels() for label keys.
  */
-function softuni_home_cpt() {
+function softuni_property_cpt() {
 	$labels = array(
-		'name'                  => _x( 'Homes', 'Post type general name', 'softuni-homes' ),
-		'singular_name'         => _x( 'Home', 'Post type singular name', 'softuni-homes' ),
-		'menu_name'             => _x( 'Homes', 'Admin Menu text', 'softuni-homes' ),
-		'name_admin_bar'        => _x( 'Home', 'Add New on Toolbar', 'softuni-homes' ),
+		'name'                  => _x( 'Properties', 'Post type general name', 'softuni-homes' ),
+		'singular_name'         => _x( 'Property', 'Post type singular name', 'softuni-homes' ),
+		'menu_name'             => _x( 'Properties', 'Admin Menu text', 'softuni-homes' ),
+		'name_admin_bar'        => _x( 'Property', 'Add New on Toolbar', 'softuni-homes' ),
 		'add_new'               => __( 'Add New', 'softuni-homes' ),
-		'add_new_item'          => __( 'Add New Home', 'softuni-homes' ),
-		'new_item'              => __( 'New Home', 'softuni-homes' ),
-		'edit_item'             => __( 'Edit Home', 'softuni-homes' ),
-		'view_item'             => __( 'View Home', 'softuni-homes' ),
-		'all_items'             => __( 'All Homes', 'softuni-homes' ),
+		'add_new_item'          => __( 'Add New Property', 'softuni-homes' ),
+		'new_item'              => __( 'New Property', 'softuni-homes' ),
+		'edit_item'             => __( 'Edit Property', 'softuni-homes' ),
+		'view_item'             => __( 'View Property', 'softuni-homes' ),
+		'all_items'             => __( 'All Properties', 'softuni-homes' ),
 	);
 
 	$args = array(
@@ -26,7 +26,7 @@ function softuni_home_cpt() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'home' ),
+		'rewrite'            => array( 'slug' => 'property' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
@@ -35,14 +35,14 @@ function softuni_home_cpt() {
         'show_in_rest'       => true,
 	);
 
-	register_post_type( 'home', $args );
+	register_post_type( 'property', $args );
 }
 
-add_action( 'init', 'softuni_home_cpt' );
+add_action( 'init', 'softuni_property_cpt' );
 
 
 /**
- * Create taxonomie "location" for the post type "home".
+ * Create taxonomie "location" for the post type "property".
  *
  * @see register_post_type() for registering custom post types.
  */
@@ -72,7 +72,7 @@ function softuni_home_location_taxonomy() {
         'show_in_rest'       => true,
 	);
 
-	register_taxonomy( 'location', array( 'home' ), $args );
+	register_taxonomy( 'location', array( 'property' ), $args );
 }
 // hook into the init action and call create_home_taxonomies when it fires
 add_action( 'init', 'softuni_home_location_taxonomy', 0 );
