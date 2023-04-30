@@ -24,3 +24,14 @@
 		<header class="site-header">
 			<h1 class="site-title"><a href="#"><?php esc_html_e( get_bloginfo( 'name' ) ); ?></a></h1>
 		</header>
+
+    <div class="nav-menu">
+        <?php if ( has_nav_menu( 'primary_menu' ) ) {
+            wp_nav_menu(
+                array(
+                    'theme_location' => "primary_menu",
+                )
+            );
+        }
+        ?>
+    </div>
