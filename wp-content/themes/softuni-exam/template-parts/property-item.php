@@ -7,10 +7,38 @@
         </h2>
         <div class="property-meta">
             <span class="meta-location">Ovcha Kupel, Sofia</span>
-            <span class="meta-total-area">Total area: 91.65 sq.m</span>
+            <?php 
+                if ( ! empty( get_field( 'property_area' ) ) ) : ?>
+
+                    <span class="meta-total-area">
+                        <?php
+                            esc_html_e( 'Total area: ' . get_field( 'property_area' ) );
+                        ?>
+                    </span>
+                <?php else : ?>
+                    <span class="meta-total-area">
+                        <?php
+                            esc_html_e( 'Unknown area' );
+                        ?>
+                    </span>
+            <?php endif ?>
         </div>
         <div class="property-details">
-            <span class="property-price">€ 100,815</span>
+            <?php 
+                if ( ! empty( get_field( 'property_price' ) ) ) : ?>
+
+                    <span class="property-price">
+                        <?php
+                            esc_html_e( '€ ' . get_field( 'property_price' ) );
+                        ?>
+                    </span>
+            <?php else : ?>
+                <span class="property-price">
+                        <?php
+                            esc_html_e( 'Unknown price' );
+                        ?>
+                    </span>
+            <?php endif ?>
             <span class="property-date"> <?php esc_html_e( "Posted on " . get_the_date( 'd-m-Y' ), "softuni-homes"  ); ?></span>
         </div>
     </div>
