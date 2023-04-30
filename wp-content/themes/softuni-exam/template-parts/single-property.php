@@ -72,24 +72,14 @@
 		<aside class="property-secondary">
 			<div class="property-logo">
 				<div class="property-logo-box">
-					<img src=
-						<?php
-
-							$thumbnail_url = get_template_directory_uri() . "/dist/img/default-company-logo.png";
-
-							if ( has_post_thumbnail() ) {
-								$thumbnail_url = get_the_post_thumbnail_url();
-							}
-
-							esc_html_e( $thumbnail_url );
-
-						?>
-					alt="Post thumbnail">
-
-					<?php //the_post_thumbnail( 'medium' ) ?>
+					<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail();
+						}
+					?>
 				</div>
 			</div>
-			<a href="#" class="button button-wide"><?php esc_html_e( 'Buy now', 'softuni-homes' ) ?></a>
+			<a href="#" class="button button-wide"><?php esc_html_e( 'Rent now', 'softuni-homes' ) ?></a>
 			<a href="#" id="<?php esc_html_e( get_the_ID() ); ?>" class="like-button button-wide">Like👍</a>
 		</aside>
 	</div>
