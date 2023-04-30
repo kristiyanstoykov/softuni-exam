@@ -22,7 +22,7 @@
 <body <?php body_class() ?> >
 	<div class="site-wrapper">
 		<header class="site-header">
-			<h1 class="site-title"><a href="#"><?php esc_html_e( get_bloginfo( 'name' ) ); ?></a></h1>
+			<h1 class="site-title"><a href="<?php esc_html_e( site_url() ); ?>"><?php esc_html_e( get_bloginfo( 'name' ) ); ?></a></h1>
 		</header>
 
     <div class="nav-menu">
