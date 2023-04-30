@@ -49,6 +49,7 @@ wp-content/themes/twentytwentytwo/
 ### Plugins ###
 /wp-content/db.php
 wp-content/plugins/wp-dummy-content-generator/
+wp-content/plugins/advanced-custom-fields/
 
 ### Backups Files ###
 # List the backup files here
