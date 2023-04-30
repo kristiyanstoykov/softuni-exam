@@ -9,7 +9,7 @@ function softuni_property_cpt() {
 	$labels = array(
 		'name'                  => _x( 'Properties', 'Post type general name', 'softuni-homes' ),
 		'singular_name'         => _x( 'Property', 'Post type singular name', 'softuni-homes' ),
-		'menu_name'             => _x( 'Properties', 'Admin Menu text', 'softuni-homes' ),
+		'menu_name'             => _x( 'Properties (homes)', 'Admin Menu text', 'softuni-homes' ),
 		'name_admin_bar'        => _x( 'Property', 'Add New on Toolbar', 'softuni-homes' ),
 		'add_new'               => __( 'Add New', 'softuni-homes' ),
 		'add_new_item'          => __( 'Add New Property', 'softuni-homes' ),
