@@ -5,6 +5,18 @@
 				<a href="#">Home</a>,
 				<a href="#">Single</a>
 			</p>
+
+            <div class="footer-menu">
+				<?php if ( has_nav_menu( 'footer_menu' ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer_menu',
+						)
+					);
+				}
+				?>
+			</div>
+
 		</footer>
 	</div>
 
