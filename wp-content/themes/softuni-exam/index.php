@@ -12,6 +12,9 @@
         <?php endwhile ?>
 
 		</ul>
+
+        <?php echo posts_nav_link(); ?>
+        
     <?php endif ?>
 		
 <?php get_footer(); ?>
