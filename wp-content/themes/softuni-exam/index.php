@@ -2,18 +2,18 @@
 
 <?php if ( have_posts() ) : ?>
 
-		<ul class="properties-listing">
+    <ul class="properties-listing">
 
-        <?php while ( have_posts() ) : ?>
-            <?php the_post(); ?>
+    <?php while ( have_posts() ) : ?>
+        <?php the_post(); ?>
+        
+        <?php get_template_part( 'template-parts/post', 'item' ); ?>
 
-			<?php get_template_part( 'template-parts/property', 'item' ); ?>
+    <?php endwhile ?>
 
-        <?php endwhile ?>
+    </ul>
 
-		</ul>
-
-        <?php echo posts_nav_link(); ?>
+    <?php echo posts_nav_link(); ?>
         
     <?php endif ?>
 		
