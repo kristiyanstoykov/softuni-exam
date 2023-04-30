@@ -18,3 +18,8 @@
  * Load our custom post types
  */
 require 'cpt-property.php';
+
+/**
+ * Load our functions.php
+ */
+require 'functions.php';
