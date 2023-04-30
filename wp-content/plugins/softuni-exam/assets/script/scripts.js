@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
             dataType: 'json',
             url: my_ajax_object.ajax_url,
             data: {
-                action:'softuni_like_job', // PHP function
+                action:'softuni_like_property', // PHP function
                 job_id: job_id // we need to make this dynamic
             },
             success: function(msg){
