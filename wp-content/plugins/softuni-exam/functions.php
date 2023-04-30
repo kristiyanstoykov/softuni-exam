@@ -65,3 +65,26 @@ function softuni_display_single_term( $jobs_id, $taxonomy ) {
     return $output;
 
 }
+
+
+
+/**
+ * Function for liking a property
+ *
+ * @return void
+ */
+function softuni_like_property() {
+	$job_id = esc_attr( $_POST['job_id'] );
+	$likes_number = get_post_meta( $job_id, 'property_likes', true );
+
+    if ( empty( $likes_number ) ) {
+        update_post_meta( $job_id, 'property_likes', 1 );
+    } else {
+	    update_post_meta( $job_id, 'property_likes', ++$likes_number );
+    }
+
+    wp_die();
+}
+
+add_action( 'wp_ajax_nopriv_softuni_like_property', 'softuni_like_property' );
+add_action( 'wp_ajax_softuni_like_property', 'softuni_like_property' );
